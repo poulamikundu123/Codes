@@ -1,0 +1,876 @@
+/* ===== Global base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #e7f5ec;
+}
+
+/* ===== Page layout ===== */
+.disease-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e0fbe8 0, #e7f5ec 40%, #e7f5ec 100%);
+}
+
+/* Top bar */
+.disease-topbar {
+  background: linear-gradient(135deg, #059669, #16a34a);
+  color: #fff;
+  padding: 1rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.disease-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.disease-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disease-logo-icon {
+  font-size: 1.4rem;
+}
+
+.disease-topbar-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.disease-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.disease-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Main content wrapper */
+.disease-main {
+  max-width: 960px;
+  margin: 2.2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ===== Card base ===== */
+.disease-card {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Upload card spacing */
+.disease-upload-card {
+  margin-bottom: 1.5rem;
+}
+
+/* Upload header */
+.disease-upload-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.disease-upload-header-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.disease-upload-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Dropzone */
+.disease-drop-wrapper {
+  margin-top: 0.25rem;
+}
+
+.disease-dropzone {
+  border-radius: 0.9rem;
+  border: 2px dashed #22c55e;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 2.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+}
+
+.disease-dropzone-has-image {
+  padding: 0;
+}
+
+.disease-drop-inner {
+  text-align: center;
+}
+
+.disease-drop-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.disease-drop-title {
+  margin: 0;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.disease-drop-subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Selected image */
+.disease-drop-image {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Clear image button */
+.disease-drop-clear {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.35);
+}
+
+/* Hidden file inputs */
+.disease-file-input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Buttons row */
+.disease-upload-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+.disease-btn-outline,
+.disease-btn-solid {
+  flex: 1;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  font-size: 0.96rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform 0.06s ease, box-shadow 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.disease-btn-icon {
+  font-size: 1rem;
+}
+
+.disease-btn-outline {
+  background: #ffffff;
+  color: #16a34a;
+  border-color: #22c55e;
+}
+
+.disease-btn-outline:hover {
+  background: #ecfdf5;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
+}
+
+.disease-btn-solid {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #ffffff;
+}
+
+.disease-btn-solid:hover {
+  box-shadow: 0 8px 22px rgba(22, 163, 74, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Analyze button */
+.disease-analyze-btn {
+  margin-top: 1.4rem;
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.9rem 1rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s ease, transform 0.06s ease, opacity 0.12s ease;
+}
+
+.disease-analyze-btn:hover {
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.disease-analyze-btn-disabled,
+.disease-analyze-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ===== Tips card ===== */
+.disease-tips-card {
+  margin-top: 1.4rem;
+  background: linear-gradient(135deg, #e0f2fe, #eff6ff);
+  border-radius: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.disease-tips-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.disease-tips-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #1d4ed8;
+}
+
+.disease-tips-title {
+  margin: 0;
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 0.98rem;
+}
+
+.disease-tips-list {
+  margin: 0.3rem 0 0;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.disease-tips-list li + li {
+  margin-top: 0.2rem;
+}
+
+/* ===== Error ===== */
+.disease-error-card {
+  margin-top: 1.2rem;
+  border-radius: 0.9rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.disease-error-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #b91c1c;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* ===== Results section ===== */
+.disease-results {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Main result card */
+.disease-result-main-card {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  box-shadow: 0 16px 40px rgba(22, 163, 74, 0.45);
+}
+
+.disease-result-main-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.disease-result-main-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.disease-result-main-label {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.disease-result-main-title {
+  margin: 0.25rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.disease-result-confidence {
+  margin-left: auto;
+  text-align: right;
+}
+
+.disease-confidence-label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.disease-confidence-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* progress bar */
+.disease-progress-bar {
+  margin-top: 0.9rem;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.disease-progress-fill {
+  width: 85%;
+  height: 100%;
+  border-radius: inherit;
+  background: #bbf7d0;
+}
+
+/* Audio card */
+.disease-audio-card {
+  background: #fdf2ff;
+  border-radius: 1rem;
+  border: 1px solid #f5d0fe;
+}
+
+.disease-audio-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.disease-audio-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #e879f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.disease-audio-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: #4c1d95;
+}
+
+.disease-audio-subtitle {
+  margin: 0.15rem 0 0;
+  font-size: 0.86rem;
+  color: #6b21a8;
+}
+
+.disease-audio-player {
+  margin-top: 0.6rem;
+  width: 100%;
+}
+
+/* Detail cards (pest, advice, etc.) */
+.disease-detail-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  border-radius: 1rem;
+}
+
+.disease-detail-alert {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.disease-detail-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  background: #fecaca;
+}
+
+.disease-detail-icon.yellow {
+  background: #fee2a2;
+}
+
+.disease-detail-icon.blue {
+  background: #bfdbfe;
+}
+
+.disease-detail-icon.green {
+  background: #bbf7d0;
+}
+
+.disease-detail-icon.purple {
+  background: #e9d5ff;
+}
+
+.disease-detail-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.disease-detail-text {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.disease-detail-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* Pill-style lists (pesticides / fertilizers) */
+.disease-detail-block {
+  width: 100%;
+}
+
+.disease-pill-list {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.disease-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.disease-pill-main {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(90deg, #eff6ff, #e0f2fe);
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.disease-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+
+.disease-pill-list-green .disease-pill-main {
+  background: linear-gradient(90deg, #dcfce7, #bbf7d0);
+}
+
+.green-dot {
+  background: #16a34a;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 768px) {
+  .disease-topbar {
+    padding: 0.9rem 1.1rem;
+  }
+
+  .disease-main {
+    margin-top: 1.6rem;
+    padding: 0 1rem 2.5rem;
+  }
+
+  .disease-upload-actions {
+    flex-direction: column;
+  }
+
+  .disease-result-main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .disease-result-confidence {
+    margin-left: 0;
+    margin-top: 0.4rem;
+    text-align: left;
+  }
+}
+/* ----------------------------- */
+/* CROP INPUT FIELD (MATCHES UI) */
+/* ----------------------------- */
+
+.disease-label {
+  font-weight: 600;
+  color: #0a6b3f;
+  font-size: 15px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.disease-optional {
+  color: #6b6b6b;
+  font-weight: 500;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Wrapper row */
+.disease-crop-input-row {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Input box style */
+.disease-crop-input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.04);
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.disease-crop-input:focus {
+  border-color: #60d394;
+  box-shadow: 0 0 0 3px rgba(76, 217, 140, 0.25);
+}
+
+/* --------------------------- */
+/* VOICE BUTTON (MIC) STYLING  */
+/* --------------------------- */
+
+.disease-btn-voice {
+  background: #3b82f6;
+  border: none;
+  padding: 11px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
+  transition: 0.15s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Hover effect */
+.disease-btn-voice:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* ACTIVE LISTENING VISUAL */
+.disease-btn-voice.listening {
+  background: #2563eb !important;
+  box-shadow: 0 8px 22px rgba(59, 130, 246, 0.28);
+  transform: scale(1.06);
+  outline: 3px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Hint text below input */
+.disease-crop-hint {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+/* ---------- Soil result styling (add to DiseaseSolution.css) ---------- */
+
+/* container */
+.result-stack {
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* base card */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(34, 50, 40, 0.06);
+  border: 1px solid rgba(10,10,10,0.03);
+  overflow: hidden;
+}
+
+/* main header bar (green gradient) */
+.card-main {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: linear-gradient(90deg,#2aa34a 0%, #36c15a 100%);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(54,193,90,0.08);
+  display: flex;
+  align-items: center;
+}
+
+/* card-main internal layout */
+.card-main-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-main-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: inset 0 -2px 6px rgba(0,0,0,0.06);
+}
+
+.card-main-label {
+  font-size: 13px;
+  margin: 0 0 4px;
+  opacity: 0.95;
+}
+
+.card-main-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* small helper: card-row-head - used by many cards */
+.card-row-head {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* icons on left of rows */
+.card-icon {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: linear-gradient(180deg,#eef6f0,#ffffff);
+  box-shadow: 0 6px 18px rgba(8,40,20,0.03);
+}
+
+/* colored icon variants */
+.card-icon.blue { background: linear-gradient(180deg,#e8f2ff,#ffffff); }
+.card-icon.green { background: linear-gradient(180deg,#e8f9ee,#ffffff); }
+.card-icon.yellow { background: linear-gradient(180deg,#fff8e6,#ffffff); }
+.card-icon.orange { background: linear-gradient(180deg,#fff4ea,#ffffff); }
+.card-icon.purple { background: linear-gradient(180deg,#f3eaff,#ffffff); }
+
+/* titles and subs inside card */
+.card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #153d2b;
+}
+
+.card-sub {
+  margin: 6px 0 0;
+  color: #51635a;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* audio card specifics */
+.card-audio {
+  padding-bottom: 14px;
+}
+
+.audio-custom-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* audio buttons */
+.audio-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 6px 16px rgba(8,40,20,0.03);
+}
+
+.audio-btn.stop {
+  background: #ffe7e7;
+  color: #b81c1c;
+}
+
+.audio-btn.play {
+  background: #e8fff2;
+  color: #0b7a46;
+}
+
+/* audio element styling fallback */
+audio {
+  width: 100%;
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* small detail cards (summary, irrigation etc) */
+.card + .card { /* slight spacing handled by .result-stack gap */ }
+
+/* responsive: stack nicely on small screens */
+@media (max-width: 880px) {
+  .result-stack { padding: 0 12px; gap: 14px; }
+  .card-main-title { font-size: 18px; }
+  .card-main-label { font-size: 12px; }
+  .card-icon { min-width: 40px; min-height: 40px; font-size: 18px; }
+  .card-title { font-size: 15px; }
+}
+
+/* optional: improve pills / badges used under main tile */
+.disease-detail-badge, .disease-confidence-value {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(6,120,70,0.06);
+  color: #0b7a46;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* fine tune spacing that was too tall in your screenshot */
+.disease-card.disease-audio-card,
+.card-audio,
+.card {
+  padding: 16px;
+}
+
+/* prevent audio bar from being huge */
+.card-audio audio::-webkit-media-controls-panel {
+  height: 36px;
+}
+
+/* small visual polish for recommended crops list */
+.card .card-sub ul, .card .card-sub ol {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+/* end of Soil result styling */
