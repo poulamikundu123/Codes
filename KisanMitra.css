@@ -1,0 +1,424 @@
+/* Root background */
+.km-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(206, 227, 207);
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Main card */
+.km-shell {
+  width: 95vw;              
+  max-width: 1400px;       
+  min-height: 80vh;
+  background: #c2f3c2;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  padding: 24px 32px 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header */
+.km-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.km-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.km-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e3f7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.km-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.km-title {
+  font-weight: 600;
+  font-size: 35px;
+  color: #064e3b;
+}
+
+.km-subtitle {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Header right: language */
+.km-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.km-lang-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.km-lang-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #0f172a;
+}
+
+.km-lang-select {
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 5px 18px;
+  font-size: 16px;
+  min-width: 270px;       
+  height: 42px;  
+  outline: none;
+  background-color: #f8fafc;
+}
+
+/* Chat area */
+.km-chat {
+  flex: 1;
+  min-height: 200px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 16px 4px;
+  /* background: linear-gradient(180deg, #f9fafb 0%, #f1f5f9 100%); */
+  background: c2f3c2;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+/* Messages */
+.km-message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.km-message-bot {
+  background: #22c55e;
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.km-message-user {
+  background: white;
+  color: #0f172a;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Quick actions */
+.km-quick-actions {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.km-qa-label {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.km-qa-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Button with icon + text stacked vertically */
+.km-qa-btn {
+  flex: 1;
+  min-width: 300px;       
+  min-height: 30px;        
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  font-size: 18px;       
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+  display: flex;
+  flex-direction: row;    
+  align-items: center;
+  gap: 10px;
+}
+
+
+.km-qa-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+.km-quick-actions {
+  margin-bottom: 6px;   
+}
+
+.km-qa-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.45);
+}
+
+.km-qa-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Icon inside quick action */
+.km-qa-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.8;
+}
+
+.km-qa-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Input row */
+.km-input-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.km-input {
+  flex: 1;
+  height: 64px;              
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  padding: 0 22px;           
+  font-size: 18px;           
+  outline: none;
+  background: #f8fafc;
+}
+
+.km-input:focus {
+  border-color: #30844f;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+}
+
+/* Icon buttons (mic + send) */
+.km-icon-btn {
+  width: 58px;               
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5f9ee;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+
+.km-icon-btn svg {
+  width: 26px;               
+  height: 26px;
+  fill: #15803d;
+}
+
+.km-icon-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(34, 197, 94, 0.35);
+}
+
+/* Mic listening state */
+.km-mic-listening {
+  background: #facc15;
+}
+
+.km-mic-listening svg {
+  fill: #92400e;
+}
+
+/* Send button */
+
+
+.km-send-btn {
+  width: 58px;
+  height: 58px;
+  background: #16a34a;
+}
+
+.km-send-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+.km-send-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .km-shell {
+    padding: 16px 18px 14px;
+  }
+
+  .km-chat {
+    max-height: 300px;
+  }
+
+  .km-qa-btn {
+    min-width: 140px;
+    font-size: 13px;
+  }
+}
+
+
+/* Message row layout */
+.km-msg-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+
+/* Bot on left, User on right */
+.km-msg-bot {
+  justify-content: flex-start;
+}
+
+.km-msg-user {
+  justify-content: flex-end;
+}
+
+/* Message bubble */
+.km-msg-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Bot bubble */
+.km-msg-bot .km-msg-bubble {
+  background: #5fb65f;
+  color: white;
+  border-bottom-left-radius: 4px;
+}
+
+/* User bubble */
+.km-msg-user .km-msg-bubble {
+  background: white;
+  color: #064e3b;
+  border-bottom-right-radius: 4px;
+  border: 1px solid #d1fae5;
+}
+
+/* Corner icons */
+.km-msg-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.bot-icon {
+  background: #22c55e;
+  color: white;
+}
+
+.user-icon {
+  background: #e5f9ee;
+  color: #166534;
+}
+
+/* Timestamp */
+.km-msg-time {
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.7;
+  text-align: right;
+}
+
+/* Header bot image */
+.km-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e6f7ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.km-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.km-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e6f7ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.km-avatar-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;  /* or "contain" if you want full tomato in circle */
+}
