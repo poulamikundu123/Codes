@@ -1,0 +1,1285 @@
+/* src/styles/MandiPrice.css */
+
+/* -----------------------------------------
+   THEME VARIABLES
+------------------------------------------ */
+:root {
+  --green-1: #22c55e;
+  --green-2: #10b981;
+  --green-3: #0d9488;
+
+  --bg-1: #f0fdf4;
+  --bg-2: #ecfdf5;
+  --bg-3: #f0fdfa;
+
+  --card-bg: rgba(255, 255, 255, 0.95);
+
+  --text-dark: #1f2937;
+  --text-muted: #4b5563;
+
+  --radius: 18px;
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+  --header-height: 74px;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* PAGE BACKGROUND */
+body {
+  background: radial-gradient(circle at top left, #bbf7d0 0, #ecfeff 35%, #f9fafb 80%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-dark);
+}
+
+/* HEADER BAR */
+.mandi-header {
+  background: linear-gradient(to right, var(--green-1), var(--green-2), var(--green-3));
+  padding: 16px 24px;
+  height: var(--header-height);
+  color: white;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.mandi-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.mandi-header p {
+  margin: 4px 0 0;
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+/* back + icon */
+.mandi-back {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.mandi-back svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mandi-header-icon {
+  background: rgba(255, 255, 255, 0.22);
+  padding: 8px;
+  border-radius: 14px;
+  display: flex;
+}
+
+/* MAIN LAYOUT */
+.mandi-main {
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* left & right columns */
+.mandi-left {
+  flex: 0 0 460px;
+  width: 420px !important;   
+  max-width: 420px !important;
+  flex-shrink: 0;
+}
+
+.mandi-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARD BASE */
+.mandi-card,
+.card {
+  background: var(--card-bg);
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* INPUT CARD HEADER */
+.mandi-card-input {
+  position: relative;
+  overflow: hidden;
+}
+
+.mandi-card-input-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.mandi-card-input-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mandi-card-input-title h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.mandi-card-input-title p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.mandi-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #bbf7d0, #22c55e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #166534;
+}
+
+/* LIVE pill */
+.mandi-live-pill {
+  background: #facc15;
+  color: #854d0e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* SECTION TITLES */
+.mandi-section {
+  margin-top: 16px;
+}
+
+.mandi-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #111827;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+}
+.dot-green {
+  background: #22c55e;
+}
+.dot-blue {
+  background: #2563eb;
+}
+
+/* GRID INPUTS */
+.grid {
+  display: grid;
+  gap: 14px;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.mandi-input-grid {
+  margin-bottom: 8px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 13px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.25);
+}
+
+/* BUTTONS */
+.mandi-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(to right, #16a34a, #059669);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+.mandi-btn-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.mandi-btn-primary:hover:not([disabled]) {
+  background: linear-gradient(to right, #15803d, #047857);
+}
+
+.mandi-btn-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.mandi-btn-location:hover {
+  background: #0284c7;
+}
+.mandi-btn-location svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mandi-btn-get {
+  width: 100%;
+  margin-top: 18px;
+}
+
+
+/* LOCATION BOX (new style) */
+.mandi-location-box.new-style {
+  margin-top: 14px;
+  background: #eff6ff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+}
+
+.mandi-location-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.mandi-location-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #dbeafe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mandi-location-coords {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+}
+.mandi-location-sub {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #1f2937;
+}
+
+/* INFO & ERROR PANELS */
+.info-panel h2 {
+  margin-top: 0;
+  font-size: 17px;
+}
+.info-panel p {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.error-panel {
+  border-left: 4px solid #ef4444;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* BEST MANDI CARD – match screenshot */
+.mandi-best-card {
+  background: #fffbeb;                 /* soft cream */
+  border-radius: 22px;
+  border: 2px solid #facc15;           /* yellow border */
+  padding: 16px 18px 14px;
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.25);
+}
+
+.mandi-best-header {
+  border-bottom: 1px solid #fef3c7;
+  padding-bottom: 8px;
+}
+
+.mandi-best-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #92400e;                      /* brownish orange */
+}
+
+.mandi-best-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #fef3c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* pill above mandi name */
+.mandi-best-subheader {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.mandi-badge-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: none;
+  background: #16a34a;                 /* solid green */
+  color: #ffffff;
+}
+
+/* layout of card */
+.mandi-best-grid {
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.mandi-best-main {
+  flex: 1;
+}
+
+.mandi-best-main h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mandi-best-location {
+  margin: 2px 0 10px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* stat boxes with colored borders like screenshot */
+.mandi-best-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stat-box {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-profit {
+  color: #16a34a;
+}
+
+/* specific color accents */
+.stat-price {
+  border-color: #bbf7d0;
+  color: #15803d;
+}
+
+.stat-distance {
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+.stat-net {
+  border-color: #e9d5ff;
+  color: #7c3aed;
+}
+
+.stat-profitability {
+  border-color: #a7f3d0;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* big green revenue box */
+.mandi-best-revenue {
+  width: 240px;
+  background: #059669;
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.revenue-label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.revenue-value {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.revenue-sub {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.95;
+}
+
+/* yellow footer box */
+.mandi-best-footer {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fef3c7;
+  border: 1px solid #facc15;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #92400e;
+}
+
+.mandi-best-footer .footer-icon {
+  font-size: 14px;
+}
+
+/* responsive tweaks so size matches nicely on smaller screens */
+@media (max-width: 900px) {
+  .mandi-best-grid {
+    flex-direction: column;
+  }
+  .mandi-best-revenue {
+    width: 100%;
+  }
+}
+
+
+/* revenue pill */
+.mandi-best-revenue {
+  width: 260px;
+  background: linear-gradient(135deg, #16a34a, #0f766e);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.revenue-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+.revenue-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+.revenue-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+/* RESULTS WRAPPER (TABLE + INSIGHTS) */
+.mandi-results-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(230px, 1.2fr);
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* TABS */
+.mandi-results-card {
+  padding-top: 14px;
+}
+
+.mandi-tabs {
+  display: inline-flex;
+  padding: 3px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.mandi-tab-btn {
+  border: none;
+  background: transparent;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4b5563;
+  cursor: pointer;
+}
+.mandi-tab-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.mandi-tab-active {
+  background: #ffffff;
+  box-shadow: 0 3px 7px rgba(148, 163, 184, 0.3);
+  color: #111827;
+}
+
+/* TABLE VIEW */
+.mandi-table-wrapper {
+  margin-top: 8px;
+}
+
+.mandi-table-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.mandi-table-scroll {
+  max-height: 360px;
+  overflow: auto;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.mandi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.mandi-table thead {
+  background: #f9fafb;
+}
+.mandi-table th,
+.mandi-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.mandi-table th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+.mandi-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mandi-table-name div {
+  font-weight: 600;
+}
+.mandi-table-sub {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.mandi-row-best {
+  background: #ecfdf5;
+}
+
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #f3f4f6;
+}
+
+/* simple colour accent for top 3 */
+.rank-1 {
+  background: #fef3c7;
+  color: #92400e;
+}
+.rank-2 {
+  background: #e5e7eb;
+  color: #374151;
+}
+.rank-3 {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+/* MAP VIEW */
+.mandi-map-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.mandi-map-panel {
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  background: #f9fafb;
+}
+
+.mandi-map-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mandi-map-area {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px dashed #d1d5db;
+}
+
+.mandi-map-legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+}
+.legend-you {
+  background: #ef4444;
+}
+.legend-best {
+  background: #22c55e;
+}
+.legend-other {
+  background: #3b82f6;
+}
+
+/* fake map grid */
+.mandi-map-grid {
+  position: relative;
+  height: 220px;
+  background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+    linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* markers */
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.map-marker.you {
+  top: 55%;
+  left: 50%;
+  background: #fecaca;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+
+.map-marker.mandi {
+  background: #e0f2fe;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.map-marker.mandi.best {
+  background: #bbf7d0;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.map-marker.mandi.selected {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
+}
+
+/* map details card */
+.mandi-map-details {
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  background: #ffffff;
+}
+.mandi-map-details h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+.mandi-map-details h4 {
+  margin: 6px 0 2px;
+  font-size: 16px;
+}
+.mandi-coords {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* INSIGHTS CARD */
+.mandi-insights-card h3 {
+  margin-top: 0;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.insight-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  font-size: 13px;
+}
+.insight-row + .insight-row {
+  border-top: 1px dashed #e5e7eb;
+}
+.insight-badge {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .mandi-main {
+    flex-direction: column;
+  }
+  .mandi-left {
+    flex: 1;
+  }
+  .mandi-results-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mandi-main {
+    padding: 16px;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .mandi-best-grid {
+    flex-direction: column;
+  }
+  .mandi-best-revenue {
+    width: 100%;
+  }
+  .mandi-map-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TABLE CARD WRAPPER – pink header like screenshot */
+.mandi-table-wrapper {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff7fb; /* very light pink */
+}
+
+.mandi-table-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  background: #fee2ff;           /* pink bar at top */
+  color: #7e22ce;
+}
+
+.mandi-table-header svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mandi-table-scroll {
+  border-radius: 0 0 22px 22px;
+  border: none;
+}
+
+/* header icons */
+.th-icon {
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+/* rows & hover */
+.mandi-row {
+  transition: background 0.12s ease;
+}
+.mandi-row:hover {
+  background: #f9fafb;
+}
+
+/* first row highlight */
+.mandi-row-highlight {
+  background: #ecfdf5;      /* light green */
+}
+
+/* rank chips exactly like screenshot */
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rank-1 {
+  background: #facc15;
+  color: #fefce8;
+}
+.rank-2 {
+  background: #9ca3af;
+  color: #f9fafb;
+}
+.rank-3 {
+  background: #fb923c;
+  color: #fff7ed;
+}
+.rank-default {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* green text for price & net profit */
+.price-cell,
+.profit-cell {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* profitability pill (green rounded) */
+.profit-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #16a34a;
+  color: #ffffff;
+}
+
+/* Input Card Full Styling */
+
+.mandi-input-card {
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  background: white;
+}
+
+/* HEADER BAR */
+
+.mandi-input-header {
+  background: linear-gradient(to right, #059669, #047857);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.mandi-input-header .left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.mandi-input-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mandi-input-header p {
+  margin: 2px 0 0;
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+.icon-box {
+  background: rgba(255,255,255,0.25);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.live-pill {
+  background: #facc15;
+  color: #854d0e;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* SECTIONS */
+
+.section-label {
+  margin: 18px 0 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.03em;
+  color: #1e293b;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.green { background: #22c55e; }
+.blue { background: #2563eb; }
+.purple { background: #9333ea; }
+
+/* INPUT GRID */
+
+.inputs-grid {
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px;
+  width: 100%;
+}
+
+.input-block label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-block label span {
+  font-weight: normal;
+  color: #64748b;
+}
+
+.input-block input,
+.input-block select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.input-block input:focus,
+.input-block select:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.3);
+}
+
+/* LOCATION BUTTON */
+
+.location-btn {
+  margin: 10px 24px;
+  background: #0ea5e9;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.location-btn:hover {
+  background: #0284c7;
+}
+
+/* LOCATION BOX */
+
+.location-box {
+  margin: 12px 24px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 14px;
+  color: #1e3a8a;
+}
+
+.location-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.coords {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.city {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #334155;
+}
+
+/* MAIN SUBMIT BUTTON */
+
+.get-prices-btn {
+  margin: 18px 24px 24px;
+  width: calc(100% - 48px);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.get-prices-btn:hover {
+  background: #15803d;
+}
+
+.get-prices-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Prevent input blocks from wrapping */
+.input-block {
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .inputs-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ================================
+   PERFECT 3-INPUT SINGLE ROW ALIGNMENT
+   ================================ */
+
+.inputs-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  align-items: start !important;
+  gap: 16px !important;
+}
+
+/* Force equal label height so inputs align */
+.input-block label {
+  display: flex;
+  align-items: center;
+  min-height: 22px;      /* THIS is the key fix */
+  line-height: 1.1;
+  margin-bottom: 6px;
+  white-space: nowrap;  /* prevents breaking into next line */
+}
+
+/* Keep text like (₹/km) from pushing layout */
+.input-block label span {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Ensure all inputs have identical height */
+.input-block input,
+.input-block select {
+  height: 48px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+
+
+.mandi-input-card {
+  min-height: 540px;     
+  padding-bottom: 28px;
+}
+
+.inputs-grid {
+  gap: 20px;  
+}
+
+.location-btn {
+  height: 46px;
+  font-size: 15px;
+}
+
+.get-prices-btn {
+  height: 52px;
+  font-size: 16px;
+}
+
+/* ==========================================
+   ONLY FONT SIZE INCREASE – NO CARD RESIZE
+   ========================================== */
+
+/* Title: "Best Mandi Recommendation" */
+.mandi-best-title span {
+  font-size: 25px !important;   /* was smaller */
+  font-weight: 700;
+}
+
+/* Mandi Name (e.g. Malda) */
+.mandi-best-main h4 {
+  font-size: 20px !important;
+}
+
+/* Location text */
+.mandi-best-location {
+  font-size: 14px !important;
+}
+
+/* =========================
+   4 STAT BOXES – FONT ONLY
+   ========================= */
+
+/* Labels: Price, Distance, Net Profit, Profitability */
+.mandi-best-stats .stat-label {
+  font-size: 14px !important;
+}
+
+/* Values: ₹2600, 187 km, ₹25062, 99% */
+.mandi-best-stats .stat-value {
+  font-size: 18px !important;
+  font-weight: 700;
+}
+
+/* Profitability percentage specifically */
+.stat-profit {
+  font-size: 18px !important;
+  font-weight: 800;
+}
+
+/* "Most Profitable" badge text */
+.mandi-badge-primary {
+  font-size: 13px !important;
+}
+
+/* ONLY increase footer recommendation text */
+.mandi-best-footer span {
+  font-size: 15px !important;
+  font-weight: 600;
+}
